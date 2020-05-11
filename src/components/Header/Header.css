@@ -1,0 +1,13 @@
+.header {
+    height: 100px;
+    width: 100%;
+    background-color: rgb(18, 209, 235);
+    border-bottom: 2px solid rgb(9, 185, 185);
+}
+
+.headerText {
+    color: white;
+    padding-left: 20px;
+    font-size: 60px;    
+    font-weight: bold;
+}

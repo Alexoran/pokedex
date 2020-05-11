@@ -1,26 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Header from './components/Header/Header';
+import PokemonList from './components/PokemonList/PokemonList';
+import Info from './components/Info/Info';
 
-function App() {
-  return (
+import './App.css'
+
+import { Provider } from 'react-redux'
+import store from './store'
+
+
+const App = () => (
+  <Provider store={store}>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <div className="content">
+        <PokemonList />
+        <div className="about"><Info /></div>
+      </div>
     </div>
-  );
-}
+  </Provider>
+)
 
 export default App;

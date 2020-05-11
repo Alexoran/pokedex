@@ -1,0 +1,15 @@
+.main table {
+    border-collapse: collapse;
+    width: 80%;
+    margin-left: 18px;
+
+}
+th {
+    padding-left: 140px;
+}
+td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
