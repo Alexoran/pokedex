@@ -1,13 +1,10 @@
-import axios from 'axios'
 
 import {
-    GET_POKEMON,
-    ERROR_POKEMON,
     GET_POKEMON_INFO,
-    FAILD_POKEMON_INFO,
     GET_POKEMON_REQUEST,
-    GET_POKEMON_SUCCESS,
-    GET_POKEMON_INFO_SUCCESS
+    GET_POKEMON_INFO_SUCCESS,
+    SELECT_POKEMON,
+    NEXT_POKEMON,
 } from './types'
 
 
@@ -40,13 +37,15 @@ import {
 //         })
 //     }
 // }
-export const getPokemonSuccess = (payload) => ({type: GET_POKEMON_SUCCESS, payload})
+export const getPokemonInfoSuccess = (payload) => ({ type: GET_POKEMON_INFO_SUCCESS, payload })
 
-export const getPokemonInfoSuccess = (payload) => ({type: GET_POKEMON_INFO_SUCCESS, payload})
+export const getPokemon = (url) => ({ type: GET_POKEMON_INFO, url })
 
-export const getPokemon = (url) => ({type: GET_POKEMON_INFO, url})
+export const getPokemonRequest = (next) => ({ type: GET_POKEMON_REQUEST, next })
 
+export const selectPokemon = (id) => ({ type: SELECT_POKEMON, id })
 
-export const getPokemonRequest = () => ({type: GET_POKEMON_REQUEST})
+export const nextPokemon = (payload) => ({ type: NEXT_POKEMON, payload })
+
 
 

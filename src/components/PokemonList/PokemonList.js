@@ -6,37 +6,35 @@ import PokemonItem from '../PokemonItem/PokemonItem';
 import { getPokemonRequest } from '../../actions/pokemon'
 
 
-const PokemonList = React.memo(({ getPokemonRequest, pokemon, pokemonList }) => {
+const PokemonList = React.memo(({ getPokemonRequest, next, pokemonList }) => {
     useEffect(() => {
-        getPokemonRequest()
+        getPokemonRequest(next)
     }, [getPokemonRequest])
-    console.log(pokemon)
+
     return (
-        <>
             <div className='main'>
                 <div className="list">
-                    {/* {pokemon.results.map((pokemon) => (<PokemonItem key={pokemon.url} pokemon={pokemon} />))} */}
+                    {Object.values(pokemonList).map((pokemon) => (<PokemonItem key={pokemon.sprites.front_default} pokemon={pokemon} url={pokemon.sprites.front_default}/>))}
                 </div>
-                <div className="button">
-                    <button type="button" className="btn btn-primary">Load more</button>
+                <div className="button" onClick={() => getPokemonRequest(next)}>
+                    <button type="button"  className="btn btn-primary">Load more</button>
                 </div>
             </div>
-        </>
     );
 });
 
 PokemonList.propTypes = {
-    getPokemons: PropTypes.func.isRequired,
+    getPokemonRequest: PropTypes.func.isRequired,
     pokemon: PropTypes.object.isRequired,
 }
 
 const mapStateToProps = state => ({
+    next: state.pokemons.next,
     pokemonList: state.pokemons.pokemonList,
-    pokemon: state.pokemons.pokemon
 })
 
 const mapDispatchToProps = dispatch => ({
-    getPokemonRequest: () => dispatch(getPokemonRequest())
+    getPokemonRequest: (next) => dispatch(getPokemonRequest(next)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(PokemonList);

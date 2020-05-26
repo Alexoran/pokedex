@@ -1,11 +1,12 @@
 .item {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
     width: 250px;
     height: 350px;
+    border-radius: 10px;
     background: turquoise;
-    margin-top: 30px;
-    margin-left: 30px;
+    margin-top: 15px;
 }
 
 .item img {
@@ -17,5 +18,27 @@
 .name {
     margin-left: 80px;
     margin-bottom: 40px;
+    font-weight: bold;
+}
+
+.types {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;    
+}
+
+.itemType{
+    display: flex;
+    justify-content: center;
+    background: green;
+    margin-left: 15px;
+    height: 25px;
+    min-width: 70px auto;
+    border-radius: 10px;
+    padding-right: 10px;
+}
+
+.itemType a {
+    margin-left: 10px;
     font-weight: bold;
 }

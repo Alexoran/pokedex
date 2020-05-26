@@ -4,12 +4,18 @@
     margin-left: 18px;
 
 }
+
 th {
+    text-align: center;
     padding-left: 140px;
 }
+
 td {
     padding: 8px;
-    text-align: left;
+    text-align: center;
     border-bottom: 1px solid #ddd;
+    max-width: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
-

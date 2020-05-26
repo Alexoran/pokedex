@@ -4,15 +4,11 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-const whyDidYouRender = require('@welldone-software/why-did-you-render');
-whyDidYouRender(React, {
-  trackAllPureComponents: true,
-});
+
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <App />,
+  
   document.getElementById('root')
 );
 

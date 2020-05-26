@@ -1,50 +1,54 @@
 import React from 'react';
 import './FullInfo.css'
 
-const FullInfo = () => {
+const FullInfo = ({ pokemon }) => {
     return (
         <div className="full">
 
             <table className="table">
                 <thead>
                     <tr>
-                        <th scope="col">Type</th>
-                        <th scope="col">Fire</th>
+                        <th scope="col">Info</th>
+                        <th scope="col">Value</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
+                        <td>Type</td>
+                        <td className='type'>{pokemon.types.map((element) => element.type.name + ' ')}</td>
+                    </tr>
+                    <tr>
                         <td>Attack</td>
-                        <td>23</td>
+                        <td>{pokemon.stats[4].base_stat}</td>
                     </tr>
                     <tr>
                         <td>Defense</td>
-                        <td>25</td>
+                        <td>{pokemon.stats[3].base_stat}</td>
                     </tr>
-                    
+
                     <tr>
                         <td>HP</td>
-                        <td>Brown</td>
+                        <td>{pokemon.stats[5].base_stat}</td>
                     </tr>
                     <tr>
                         <td>SP Attack</td>
-                        <td>Brown</td>
+                        <td>{pokemon.stats[2].base_stat}</td>
                     </tr>
                     <tr>
                         <td>SP Defense</td>
-                        <td>Brown</td>
+                        <td>{pokemon.stats[1].base_stat}</td>
                     </tr>
                     <tr>
                         <td>Speed</td>
-                        <td>Brown</td>
+                        <td>{pokemon.stats[0].base_stat}</td>
                     </tr>
                     <tr>
                         <td>Weight</td>
-                        <td>Brown</td>
+                        <td>{pokemon.weight}</td>
                     </tr>
                     <tr>
                         <td>Total moves</td>
-                        <td>Brown</td>
+                        <td>{pokemon.moves.length}</td>
                     </tr>
                 </tbody>
             </table>
